@@ -190,6 +190,8 @@ export default {
     .about-description{
       width: 60%;
       position: relative;
+      padding: 0 50px;
+      right: -100px;
       .about-title{
         font-size: 50px;
         color: #057DCD;
@@ -217,7 +219,7 @@ export default {
         position: absolute;
         font-size: 130px;
         letter-spacing: 8px;
-        bottom: 170px;
+        bottom: 90px;
         left: -250px;
         font-weight: bold;
         -webkit-text-stroke: 5px #FFF9D2;
@@ -243,7 +245,7 @@ export default {
         width: 90%;
         position: absolute;
         top: 0;
-        left: 0;
+        right:0;
 
       }
       .sec2rbg{
