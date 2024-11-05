@@ -47,5 +47,11 @@ body{
   overflow-x: hidden;
   background-color: #F5FCFF;
 }
+@media (max-width:768px) { 
+  .container{
+  padding-top: 60px;
+  
+}
+  }
 
 </style>

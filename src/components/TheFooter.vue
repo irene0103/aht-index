@@ -36,43 +36,55 @@ export default {
     name: 'TheFooter',
     data() {
         return {
-            
+
         }
     },
 }
 </script>
 
 <style lang="scss" scoped>
-.footer-container{
+.footer-container {
     position: relative;
-    .footer-bg{
-        
+    height: 300px;
+
+    .footer-bg {
         width: 100%;
+        height: 100%;
         opacity: 0.3;
-    position: absolute;
-    left: 0;
-    z-index: -10;
+        position: absolute;
+        left: 0;
+        z-index: -10;
     }
-    .footer-bg1{
+
+    .footer-bg1 {
         width: 100%;
+        height: 100%;
         opacity: 0.5;
-    position: absolute;
-    left: 0;
-    z-index: -10;
+        position: absolute;
+        left: 0;
+        z-index: -10;
     }
-    .wrapper{
+
+    .wrapper {
         display: flex;
         justify-content: space-evenly;
         position: absolute;
         width: 100%;
         top: 150px;
         align-self: flex-end;
-        
-        .list{
-            ul{
+
+        .logo {
+            img {
+                width: 80%;
+            }
+        }
+
+        .list {
+            ul {
                 display: flex;
-                li{
-                    a{
+
+                li {
+                    a {
                         text-decoration: none;
                         color: black;
                         font-weight: bold;
@@ -80,26 +92,49 @@ export default {
                     }
                 }
             }
-            
-
         }
-        .info{
-            ul{
+
+        .info {
+            ul {
                 text-align: left;
-                li{
+
+                li {
                     line-height: 10px;
                     display: flex;
                     align-items: center;
                     margin-bottom: 10px;
                     font-weight: bold;
-                    img{
+
+                    img {
                         margin-right: 10px;
                     }
                 }
-                
+
             }
         }
     }
 }
 
+@media (max-width:768px) {
+    .footer-container {
+        .wrapper {
+            flex-direction: column;
+            align-items: center;
+            bottom: 10px;
+
+            .list {
+                margin: 15px auto;
+            }
+
+            .info {
+                ul {
+                    li {
+                        justify-content: center;
+                    }
+
+                }
+            }
+        }
+    }
+}
 </style>

@@ -28,20 +28,7 @@
         <img class="sec2rbg" :src="require('@/assets/images/sec2rbg.png')" alt="">
       </div>
     </div>
-    <div class="products">
-      <img class="products-bg" :src="require('@/assets/images/sec3bg.png')" alt="">
-      <div class="products-title" id="products">
-        <h3>產品及服務 Products and Services</h3>
-        <img :src="require('@/assets/images/Ellipse 17.png')" alt="decoration">
-      </div>
-      <div class="products-list">
-        <div class="products-item" v-for="item in products" :key="item.id">
-          <img :src="item.pic"/>
-          <h4 class="products-title">{{ item.title }}</h4>
-          <h4 class="products-eng-title">{{ item.eng }}</h4>
-        </div>
-      </div>
-    </div>
+    <product-item id="product" />
     <div class="company">
       <div class="company-title" id="company">
         <img :src="require('@/assets/images/Ellipse 17.png')" alt="decoration">
@@ -56,58 +43,15 @@
 </template>
 
 <script>
-
+import ProductItem from "@/components/ProductItem.vue"
 export default {
   name: 'HomeView',
+  components:{
+    ProductItem
+  },
   data() {
     return {
-      products:[
-        {
-          pic:require(`@/assets/images/kitchen.png`),
-          title:'廚房菜單機',
-          eng:'Kitchen Display System',
-        },
-        {
-          pic:require(`@/assets/images/pos.png`),
-          title:'POS系統',
-          eng:'POS System',
-        },
-        {
-          pic:require(`@/assets/images/Multiple.png`),
-          title:'多元支付系統',
-          eng:'Multiple Pay',
-        },
-        {
-          pic:require(`@/assets/images/Performance.png`),
-          title:'即時業績',
-          eng:'Performance',
-        },
-        {
-          pic:require(`@/assets/images/Customer.png`),
-          title:'顧客反應系統',
-          eng:'Customer Response System',
-        },
-        {
-          pic:require(`@/assets/images/Multi-Ordering.png`),
-          title:'多元點餐平台',
-          eng:'Multi-Ordering Platform',
-        },
-        {
-          pic:require(`@/assets/images/Material.png`),
-          title:'物料管理',
-          eng:'Material Management',
-        },
-        {
-          pic:require(`@/assets/images/E-invoice.png`),
-          title:'電子發票',
-          eng:'E-invoice ',
-        },
-        {
-          pic:require(`@/assets/images/Smart.png`),
-          title:'智慧店鋪',
-          eng:'Smart Store',
-        },
-      ]
+      
     }
   },
   
@@ -181,6 +125,7 @@ export default {
         bottom: 0;
         right: -400px;
         bottom: 0;
+        z-index: -20;
       }
     }
   }
@@ -258,81 +203,7 @@ export default {
 
 
   }
-  .products{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .products-bg{
-      width: 180%;
-      height: 1000px;
-      position: absolute;
-      top: 100%;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin: auto;
-      z-index: -4;
-    }
-    .products-title{
-      position: relative;
-      h3{
-        font-size: 50px;
-        color: #057DCD;
-        font-weight: bold;
-        letter-spacing: 2.5px;
-        position: relative;
-        margin-bottom: 30px;
-        &:after{
-          content: '';
-          position: absolute;
-          right: 120px;
-          bottom: -10px;
-          width: 850px;
-          border-bottom: 3px solid #057DCD;
-        }
-      }
-      img{
-        width: 8%;
-        vertical-align: bottom;
-        position: absolute;
-        z-index: -3;
-        left: 150px;
-        top: 10px;
 
-      }
-    }
-    .products-list{
-      width: 90%;
-      margin: 60px auto;
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-       .products-item{
-        width: 55%;
-        margin: 20px auto;
-        padding: 20px 10px;
-        border-radius: 15px;
-        border: 1px solid rgba(168, 168, 168, 0.50);
-        background: rgba(255, 255, 255, 0.26);
-        box-shadow: 0px 3px 7.5px 0px rgba(0, 0, 0, 0.25);
-        img{
-          width: 50%;
-        }
-        .products-title{
-          font-size: 20px;
-          font-weight: bold;
-          margin-top: 10px;
-
-        }
-        .products-eng-title{
-          font-size: 15px;
-          margin-top: 5px;
-        }
-    }
-    }
-   
-  }
   .company{
       position: relative;
       .company-title{
@@ -385,4 +256,84 @@ export default {
     50% {transform: translate(0,20px);}
     100% {transform: translate(0,0);}
 }
+
+@media (max-width:768px) { 
+  .container{
+  .banner{
+    display: block;
+    text-align: center;
+    margin: auto;
+    .banner-title{
+      width: 100%;
+      h2{
+        font-size: 50px;
+        text-indent: -1em;
+        margin: 10px auto;
+      }
+      h3{
+        font-size: 16px;
+        text-indent: 0em;
+      }
+      img{
+        width: 8%;
+        left: 150px;
+        bottom: 50px;
+      }
+    }
+    .banner-pic{
+      width: 50%;
+      .sec1{
+       width: 100%;
+       top: 150px;
+       left: 120px;
+       margin:auto;
+      }
+      .sec1bg{
+        top: -400px;
+        right: -350px;
+      }
+    }
+  }
+  .about{
+    flex-direction: column;
+    align-items: center;
+    .about-description{
+      width: 90%;
+      right: 0;
+      .about-title{
+        font-size: 40px;
+      }
+      .sec2lbg{
+        left: -200px;
+      }
+      .about-dec{
+        left: -200px;
+      }
+      .about-content{
+        font-size: 20px;
+      }
+    }
+    .about-pic{
+      width: 80%;
+      margin-bottom: 50px;
+    }
+  }
+  .company{
+      position: relative;
+      .company-title{
+    h3{
+      font-size: 40px;
+    }
+    .company-dec{
+      font-size: 60px;
+    }
+      }
+    .company-pic{
+      width: 95%;
+      margin: 30px auto;
+    }
+  }
+}
+  }
+
 </style>

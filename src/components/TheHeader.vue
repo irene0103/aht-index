@@ -128,5 +128,37 @@ export default {
         }
     }
 }
-
+@media (max-width:768px) { 
+    .header-container{
+    .wrapper{
+        width: 100%;
+        margin: auto;
+        header{
+            h1{
+                width: 90px;
+                margin: 20px 0px;
+                img{
+                    width: 40%;
+                }
+            }
+        }
+        nav{
+            margin: auto 10px;
+            ul{
+                display: flex;
+                margin: auto;
+                .about, .products, .company{
+                    margin: auto 10px;
+                    a{
+                        font-size: 15px;
+                        
+                    }
+                    }
+                
+        }
+    }
+    
+    }
+}
+  }
 </style>
